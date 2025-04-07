@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Mark Attendance</title></head>
+<body>
+<h2>Mark Attendance for <span th:text="${student.name}"></span></h2>
+<form th:action="@{/attendance/save}" method="post">
+    <input type="hidden" name="studentId" th:value="${student.id}" />
+    <label><input type="radio" name="status" value="Present" /> Present</label><br/>
+    <label><input type="radio" name="status" value="Absent" /> Absent</label><br/>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
